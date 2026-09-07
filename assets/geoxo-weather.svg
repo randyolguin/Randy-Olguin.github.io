@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Geostationary weather observation</title>
+  <desc id="desc">Original abstract illustration of a satellite observing weather systems over Earth.</desc>
+  <defs>
+    <linearGradient id="space" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#123550"/></linearGradient>
+    <radialGradient id="earth" cx="40%" cy="30%"><stop stop-color="#5ba9ca"/><stop offset=".55" stop-color="#1c577c"/><stop offset="1" stop-color="#0b2238"/></radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="15"/></filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#space)"/>
+  <g fill="#d8ebf7" opacity=".6"><circle cx="103" cy="86" r="2"/><circle cx="300" cy="133" r="1"/><circle cx="1004" cy="96" r="2"/><circle cx="1098" cy="302" r="1.5"/><circle cx="777" cy="72" r="1"/></g>
+  <circle cx="460" cy="618" r="330" fill="url(#earth)" stroke="#73b9e5" stroke-opacity=".4" stroke-width="3"/>
+  <path d="M188 558c91-64 152-22 207-42 75-27 113-95 197-73 43 11 71 43 93 84" fill="none" stroke="#eaf2fb" stroke-opacity=".55" stroke-width="22" stroke-linecap="round" filter="url(#blur)"/>
+  <path d="M203 560c96-56 148-19 211-42 68-25 114-80 189-68 41 7 74 34 101 72" fill="none" stroke="#dceefa" stroke-opacity=".65" stroke-width="8" stroke-linecap="round"/>
+  <g transform="translate(876 218) rotate(-8)"><rect x="-63" y="-42" width="126" height="84" rx="7" fill="#d8e5ec" stroke="#ffb000" stroke-width="4"/><rect x="-203" y="-52" width="118" height="104" fill="#164c77" stroke="#70b9e8" stroke-width="3"/><path d="M-191-26h94m-94 26h94m-94 26h94M-156-52v104" stroke="#70b9e8" stroke-opacity=".6"/><rect x="85" y="-52" width="118" height="104" fill="#164c77" stroke="#70b9e8" stroke-width="3"/><path d="M97-26h94M97 0h94M97 26h94M132-52v104" stroke="#70b9e8" stroke-opacity=".6"/><path d="M0 42v46l-28 20h56L0 88" fill="#ffb000"/><circle cx="0" cy="9" r="19" fill="#0c263d" stroke="#567c97" stroke-width="3"/></g>
+  <path d="M873 315 662 520M900 316 757 555" fill="none" stroke="#ffb000" stroke-opacity=".55" stroke-width="3" stroke-dasharray="9 12"/>
+  <path d="M832 119c68-33 149-26 213 18" fill="none" stroke="#8ccbf0" stroke-opacity=".28" stroke-width="2"/>
+  <text x="56" y="608" fill="#eaf2fb" font-family="monospace" font-size="22" letter-spacing="4">GEOXO // PUBLIC MISSION CONTEXT</text>
+</svg>

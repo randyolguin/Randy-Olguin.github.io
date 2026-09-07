@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Low Earth orbit tracking network</title>
+  <desc id="desc">Original abstract illustration of satellites sharing tracking data around Earth.</desc>
+  <defs>
+    <linearGradient id="space" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#102b45"/></linearGradient>
+    <radialGradient id="earth" cx="42%" cy="35%"><stop stop-color="#4d9ac5"/><stop offset=".62" stop-color="#183e61"/><stop offset="1" stop-color="#0a1e33"/></radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#space)"/>
+  <g fill="#d8ebf7" opacity=".7"><circle cx="108" cy="94" r="2"/><circle cx="220" cy="170" r="1.5"/><circle cx="947" cy="116" r="2"/><circle cx="1068" cy="235" r="1.5"/><circle cx="845" cy="65" r="1"/><circle cx="415" cy="76" r="1.5"/><circle cx="79" cy="412" r="1"/></g>
+  <circle cx="600" cy="680" r="315" fill="#2b8bd0" opacity=".24" filter="url(#glow)"/>
+  <circle cx="600" cy="680" r="295" fill="url(#earth)" stroke="#69acd1" stroke-opacity=".35" stroke-width="3"/>
+  <path d="M78 392C332 117 856 118 1121 390" fill="none" stroke="#ffb000" stroke-opacity=".45" stroke-width="3" stroke-dasharray="11 15"/>
+  <path d="M160 494C392 250 814 249 1040 492" fill="none" stroke="#8ccbf0" stroke-opacity=".25" stroke-width="2"/>
+  <g transform="translate(226 244) rotate(-22)"><rect x="-42" y="-23" width="84" height="46" rx="4" fill="#d6e2eb" stroke="#ffb000" stroke-width="3"/><rect x="-126" y="-30" width="72" height="60" fill="#174a73" stroke="#73b9e5"/><rect x="54" y="-30" width="72" height="60" fill="#174a73" stroke="#73b9e5"/><path d="M0-23V-63M-12-63h24" stroke="#ffb000" stroke-width="4"/></g>
+  <g transform="translate(973 252) rotate(24)"><rect x="-42" y="-23" width="84" height="46" rx="4" fill="#d6e2eb" stroke="#ffb000" stroke-width="3"/><rect x="-126" y="-30" width="72" height="60" fill="#174a73" stroke="#73b9e5"/><rect x="54" y="-30" width="72" height="60" fill="#174a73" stroke="#73b9e5"/><path d="M0-23V-63M-12-63h24" stroke="#ffb000" stroke-width="4"/></g>
+  <g fill="none" stroke="#ffb000"><circle cx="508" cy="461" r="9"/><circle cx="693" cy="461" r="9"/><path d="M226 244 508 461M973 252 693 461" stroke-dasharray="7 10"/></g>
+  <text x="56" y="606" fill="#eaf2fb" font-family="monospace" font-size="22" letter-spacing="4">TRACKING LAYER // PUBLIC MISSION CONTEXT</text>
+</svg>
