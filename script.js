@@ -1,15 +1,15 @@
 const portfolio = {
   roles: [
-    "mechanical engineer",
+    "Mechanical Engineer",
     "manufacturing problem solver",
     "CAD + FEA designer",
-    "hands-on builder",
+    "Hands-on Builder",
   ],
   contact: {
     // Replace these three values before publishing.
-    email: "your.email@example.com",
-    linkedin: "https://www.linkedin.com/in/your-profile",
-    github: "https://github.com/your-username",
+    email: "randyolguin1@gmail.com",
+    linkedin: "https://www.linkedin.com/in/randy-olguin/",
+    github: "https://randyolguin.github.io",
   },
 };
 
