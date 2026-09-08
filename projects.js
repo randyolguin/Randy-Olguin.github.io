@@ -33,6 +33,43 @@ window.portfolioProjects = [
     caseStudy: true
   },
   {
+    title: "Precision Edge Finder Manufacturing",
+    eyebrow: "Production machining · Tool-wear control · Precision grinding",
+    tags: ["CNC turning", "Myford grinding", "Inspection", "Tool offsets"],
+    summary: "Produced edge-finder tips and bodies on CNC equipment, then precision-finished the tip faces on a Myford grinder. Measurement trends guided offset corrections and tool-change decisions as cutting tools wore.",
+    details: [
+      "Operated CNC processes for both edge-finder tips and bodies under continuous coolant.",
+      "Measured parts at intervals to identify dimensional drift caused by tool wear.",
+      "Adjusted tool offsets to recenter the process before dimensions moved out of tolerance.",
+      "Used unusually rapid drift as a signal to inspect machining conditions and replace the cutting tool when needed.",
+      "Checked coolant delivery and other visible process conditions while troubleshooting variation.",
+      "Precision-finished the tip faces on a Myford grinder and verified the result with comparative inspection."
+    ],
+    result: "Used inspection data—not guesswork—to manage wear-driven variation and protect repeatability across precision components.",
+    videos: [
+      {
+        title: "CNC machining: edge-finder tips",
+        caption: "Production machining of the tip geometry under coolant, followed by a view of the finished component.",
+        src: "assets/projects/videos/edgefinder-tips-cnc.mp4",
+        poster: "assets/projects/video-posters/edgefinder-tips-cnc.webp"
+      },
+      {
+        title: "CNC machining: edge-finder bodies",
+        caption: "Turning the edge-finder body while monitoring the cutting process and coolant delivery.",
+        src: "assets/projects/videos/edgefinder-bodies-cnc.mp4",
+        poster: "assets/projects/video-posters/edgefinder-bodies-cnc.webp"
+      },
+      {
+        title: "Myford grinding: tip faces",
+        caption: "Precision face-finishing operation with comparative inspection shown in the original footage.",
+        src: "assets/projects/videos/edgefinder-tips-myford.mp4",
+        poster: "assets/projects/video-posters/edgefinder-tips-myford.webp"
+      }
+    ],
+    videoProject: true,
+    featured: true
+  },
+  {
     title: "Ethereum Mining Thermal Optimization",
     eyebrow: "Personal project",
     tags: ["Thermal management", "Power optimization", "Testing"],

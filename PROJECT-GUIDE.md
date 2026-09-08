@@ -39,6 +39,21 @@ If you do not have an image yet, leave `image`, `imageAlt`, `imageCredit`, and `
 
 For a larger featured case study like HALS, copy the entire HALS entry instead. Its optional `metrics`, `highlights`, and `gallery` fields create the manufacturing summary, numbered scope items, and image grid. Keep `caseStudy: true` on only your strongest project so the page stays focused.
 
+## Add click-to-play videos
+
+The Edge Finder project is the video template. Upload web-ready MP4 files under `assets/projects/videos/` and poster images under `assets/projects/video-posters/`, then copy one item inside its `videos` list:
+
+```js
+{
+  title: "Short video title",
+  caption: "What the operation demonstrates.",
+  src: "assets/projects/videos/your-video.mp4",
+  poster: "assets/projects/video-posters/your-poster.webp"
+}
+```
+
+Videos never autoplay when the page loads. Selecting a poster opens one muted video in a focused viewer; closing it stops playback and releases the file. Keep each web video under 25 MB if you plan to upload through GitHub's browser interface.
+
 ## 3. Tell the engineering story
 
 The strongest portfolio projects answer five questions:

@@ -41,6 +41,7 @@ function renderProjects() {
     const metrics = (project.metrics || []).map((metric) => `<div><strong>${escapeHtml(metric.value)}</strong><span>${escapeHtml(metric.label)}</span></div>`).join("");
     const highlights = (project.highlights || []).map((item, itemIndex) => `<li><span>${String(itemIndex + 1).padStart(2, "0")}</span><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.text)}</p></div></li>`).join("");
     const gallery = (project.gallery || []).map((item) => `<figure><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt)}" loading="lazy" /><figcaption>${escapeHtml(item.caption)}</figcaption></figure>`).join("");
+    const videos = (project.videos || []).map((item) => `<button class="video-card" type="button" data-video-src="${escapeHtml(item.src)}" data-video-poster="${escapeHtml(item.poster)}" data-video-title="${escapeHtml(item.title)}" data-video-caption="${escapeHtml(item.caption)}" aria-label="Play ${escapeHtml(item.title)}"><span class="video-poster"><img src="${escapeHtml(item.poster)}" alt="" loading="lazy" /><span class="video-play" aria-hidden="true">▶</span></span><span class="video-card-copy"><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.caption)}</small></span></button>`).join("");
     const result = project.result ? `<p class="project-result"><strong>Result:</strong> ${escapeHtml(project.result)}</p>` : "";
     const credit = project.image && project.imageCredit
       ? `<small class="image-credit">Image: ${project.imageCreditUrl ? `<a href="${escapeHtml(project.imageCreditUrl)}" target="_blank" rel="noreferrer">${escapeHtml(project.imageCredit)}</a>` : escapeHtml(project.imageCredit)}</small>`
@@ -53,6 +54,10 @@ function renderProjects() {
       return `<article class="project-card project-featured project-case-study reveal">${image}<div class="project-copy"><p class="tag">${escapeHtml(project.eyebrow || project.tags.join(" · "))}</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p><div class="case-metrics">${metrics}</div>${result}${credit}</div><div class="manufacturing-scope"><p class="tag">Manufacturing scope</p><ol>${highlights}</ol></div><div class="project-gallery">${gallery}</div></article>`;
     }
 
+    if (project.videoProject) {
+      return `<article class="project-card project-featured video-case-study reveal"><div class="video-project-copy"><p class="tag">${escapeHtml(project.eyebrow || project.tags.join(" · "))}</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p><ul>${points}</ul>${result}</div><div class="video-grid">${videos}</div><p class="video-behavior"><span aria-hidden="true">◼</span> Videos remain still until selected. Only one clip opens and plays at a time.</p></article>`;
+    }
+
     const detailBlock = points ? `<details class="project-details"><summary>Project details</summary><ul>${points}</ul>${result}</details>` : result;
     return `<article class="project-card ${project.featured ? "project-featured" : ""} reveal">${image}<div class="project-copy"><p class="tag">${escapeHtml(project.eyebrow || project.tags.join(" · "))}</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p>${detailBlock}${externalLink}${credit}</div></article>`;
   }).join("");
@@ -60,6 +65,37 @@ function renderProjects() {
 
 renderProjects();
 document.getElementById("year").textContent = new Date().getFullYear();
+
+const videoDialog = document.getElementById("video-dialog");
+const projectVideo = document.getElementById("project-video");
+const videoDialogTitle = document.getElementById("video-dialog-title");
+const videoDialogCaption = document.getElementById("video-dialog-caption");
+
+function resetProjectVideo() {
+  projectVideo.pause();
+  projectVideo.removeAttribute("src");
+  projectVideo.removeAttribute("poster");
+  projectVideo.load();
+}
+
+document.querySelectorAll("[data-video-src]").forEach((button) => {
+  button.addEventListener("click", () => {
+    resetProjectVideo();
+    videoDialogTitle.textContent = button.dataset.videoTitle;
+    videoDialogCaption.textContent = button.dataset.videoCaption;
+    projectVideo.poster = button.dataset.videoPoster;
+    projectVideo.src = button.dataset.videoSrc;
+    projectVideo.muted = true;
+    videoDialog.showModal();
+    projectVideo.play().catch(() => {});
+  });
+});
+
+videoDialog.addEventListener("close", resetProjectVideo);
+videoDialog.querySelector("[data-video-close]").addEventListener("click", () => videoDialog.close());
+videoDialog.addEventListener("click", (event) => {
+  if (event.target === videoDialog) videoDialog.close();
+});
 
 document.querySelectorAll("[data-contact]").forEach((link) => {
   const type = link.dataset.contact;

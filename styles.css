@@ -133,7 +133,7 @@ h1 em, h2 em { color: var(--accent-soft); font-family: Georgia, serif; font-weig
 .role-history { margin: 1.2rem 0 0; padding-left: 1rem; border-left: 2px solid var(--accent); color: #bfd0df !important; font: .74rem ui-monospace,monospace; letter-spacing: .04em; }
 
 .program-intro { max-width: 760px; margin: -1.5rem 0 2.5rem 35%; color: var(--muted); font-size: 1.05rem; }
-.program-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.program-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,300px),1fr)); gap: 1rem; }
 .program-card { border: 1px solid var(--line); background: var(--surface); overflow: hidden; transition: transform .25s,border-color .25s; }
 .program-card:hover { transform: translateY(-5px); border-color: rgba(255,176,0,.5); }
 .program-card > img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #0b1828; border-bottom: 1px solid var(--line); }
@@ -175,6 +175,36 @@ h1 em, h2 em { color: var(--accent-soft); font-family: Georgia, serif; font-weig
 .project-gallery figure { margin: 0; background: var(--surface); }
 .project-gallery img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .project-gallery figcaption { min-height: 84px; padding: .8rem 1rem; color: var(--muted); font-size: .7rem; }
+.video-case-study { display: block; }
+.video-project-copy { padding: clamp(1.7rem,4vw,3.2rem); }
+.video-project-copy h3 { margin: .65rem 0 1rem; font-size: clamp(2rem,4vw,3.4rem); line-height: 1; letter-spacing: -.045em; }
+.video-project-copy > p:not(.tag):not(.project-result) { max-width: 820px; color: var(--muted); font-size: 1.02rem; }
+.video-project-copy > ul { display: grid; grid-template-columns: repeat(2,1fr); gap: .55rem 2.5rem; margin: 1.6rem 0; padding: 0; list-style: none; }
+.video-project-copy > ul li { position: relative; padding-left: 1.1rem; color: #b5c5d4; font-size: .82rem; }
+.video-project-copy > ul li::before { content: ""; position: absolute; left: 0; top: .65em; width: 5px; height: 5px; background: var(--accent); }
+.video-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.video-card { display: block; padding: 0; border: 0; background: var(--surface); color: var(--ink); text-align: left; cursor: pointer; }
+.video-poster { position: relative; display: block; overflow: hidden; background: #03080e; }
+.video-poster img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(.82) contrast(1.05); transition: transform .3s,filter .3s; }
+.video-play { position: absolute; left: 50%; top: 50%; display: grid; place-items: center; width: 58px; height: 58px; padding-left: 4px; transform: translate(-50%,-50%); border: 1px solid rgba(255,255,255,.55); border-radius: 50%; background: rgba(7,17,31,.82); color: var(--accent); box-shadow: 0 10px 35px rgba(0,0,0,.4); transition: transform .2s,background .2s; }
+.video-card:hover .video-poster img,.video-card:focus-visible .video-poster img { transform: scale(1.025); filter: saturate(1) contrast(1.05); }
+.video-card:hover .video-play,.video-card:focus-visible .video-play { transform: translate(-50%,-50%) scale(1.08); background: var(--bg); }
+.video-card:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.video-card-copy { display: block; min-height: 124px; padding: 1rem 1.15rem; }
+.video-card-copy strong { display: block; margin-bottom: .45rem; font-size: .88rem; }
+.video-card-copy small { display: block; color: var(--muted); font-size: .7rem; line-height: 1.5; }
+.video-behavior { margin: 0; padding: .9rem 1.2rem; color: var(--muted); font: .65rem ui-monospace,monospace; letter-spacing: .06em; text-transform: uppercase; }
+.video-behavior span { margin-right: .55rem; color: var(--accent); }
+
+.video-dialog { width: min(92vw,900px); max-width: none; padding: 0; border: 1px solid rgba(255,176,0,.42); background: var(--surface); color: var(--ink); box-shadow: 0 35px 100px rgba(0,0,0,.75); }
+.video-dialog::backdrop { background: rgba(2,8,15,.84); backdrop-filter: blur(7px); }
+.video-dialog-shell { position: relative; padding: clamp(1rem,2.5vw,1.6rem); }
+.video-frame { display: grid; place-items: center; min-height: 280px; background: #020509; }
+.video-frame video { display: block; width: 100%; max-height: 72vh; background: #020509; }
+.video-dialog h3 { margin: 1.1rem 3rem .25rem 0; font-size: clamp(1.3rem,3vw,2rem); letter-spacing: -.03em; }
+.video-dialog p { margin: 0; max-width: 720px; color: var(--muted); font-size: .82rem; }
+.video-close { position: absolute; z-index: 2; right: .7rem; top: .7rem; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; background: rgba(7,17,31,.88); color: var(--ink); font-size: 1.5rem; cursor: pointer; }
+.video-close:hover,.video-close:focus-visible { border-color: var(--accent); color: var(--accent); }
 .project-details { margin-top: 1.4rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .project-details summary { padding: .9rem 0; color: var(--accent-soft); font-size: .78rem; font-weight: 700; cursor: pointer; }
 .project-details ul { margin: 0 0 1rem; padding-left: 1.15rem; color: var(--muted); font-size: .85rem; }
@@ -250,6 +280,7 @@ footer a { text-align: right; color: var(--ink); }
   .project-case-study .project-photo img { min-height: 330px; }
   .manufacturing-scope ol { grid-template-columns: 1fr; }
   .project-gallery { grid-template-columns: repeat(2,1fr); }
+  .video-project-copy > ul { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
 }
 
@@ -270,6 +301,10 @@ footer a { text-align: right; color: var(--ink); }
   .case-metrics strong { font-size: 1.35rem; }
   .project-gallery { grid-template-columns: 1fr; }
   .project-gallery figcaption { min-height: 0; }
+  .video-grid { grid-template-columns: 1fr; }
+  .video-poster img { aspect-ratio: 16 / 10; }
+  .video-card-copy { min-height: 0; }
+  .video-frame { min-height: 200px; }
   .systems-art { padding: 1rem; gap: .5rem; }
   .node { width: 70px; height: 70px; }
   .skill-group { grid-template-columns: .18fr 1fr; }
