@@ -40,7 +40,8 @@ function renderProjects() {
     const points = (project.details || []).map((point) => `<li>${escapeHtml(point)}</li>`).join("");
     const metrics = (project.metrics || []).map((metric) => `<div><strong>${escapeHtml(metric.value)}</strong><span>${escapeHtml(metric.label)}</span></div>`).join("");
     const highlights = (project.highlights || []).map((item, itemIndex) => `<li><span>${String(itemIndex + 1).padStart(2, "0")}</span><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.text)}</p></div></li>`).join("");
-    const gallery = (project.gallery || []).map((item) => `<figure><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt)}" loading="lazy" /><figcaption>${escapeHtml(item.caption)}</figcaption></figure>`).join("");
+    const gallery = (project.gallery || []).map((item) => `<figure><img class="${item.fit === "contain" ? "gallery-contain" : ""}" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt)}" loading="lazy" /><figcaption>${escapeHtml(item.caption)}</figcaption></figure>`).join("");
+    const videoCount = (project.videos || []).length;
     const videos = (project.videos || []).map((item) => `<button class="video-card" type="button" data-video-src="${escapeHtml(item.src)}" data-video-poster="${escapeHtml(item.poster)}" data-video-title="${escapeHtml(item.title)}" data-video-caption="${escapeHtml(item.caption)}" aria-label="Play ${escapeHtml(item.title)}"><span class="video-poster"><img src="${escapeHtml(item.poster)}" alt="" loading="lazy" /><span class="video-play" aria-hidden="true">▶</span></span><span class="video-card-copy"><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.caption)}</small></span></button>`).join("");
     const result = project.result ? `<p class="project-result"><strong>Result:</strong> ${escapeHtml(project.result)}</p>` : "";
     const credit = project.image && project.imageCredit
@@ -51,11 +52,12 @@ function renderProjects() {
       : "";
 
     if (project.caseStudy) {
-      return `<article class="project-card project-featured project-case-study reveal">${image}<div class="project-copy"><p class="tag">${escapeHtml(project.eyebrow || project.tags.join(" · "))}</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p><div class="case-metrics">${metrics}</div>${result}${credit}</div><div class="manufacturing-scope"><p class="tag">Manufacturing scope</p><ol>${highlights}</ol></div><div class="project-gallery">${gallery}</div></article>`;
+      const caseVideo = videos ? `<div class="case-video-band"><div><p class="tag">Shop-floor footage</p><h4>See the manufacturing process.</h4></div><div class="video-grid video-grid-${videoCount} case-video-grid">${videos}</div></div>` : "";
+      return `<article class="project-card project-featured project-case-study reveal">${image}<div class="project-copy"><p class="tag">${escapeHtml(project.eyebrow || project.tags.join(" · "))}</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p><div class="case-metrics">${metrics}</div>${result}${credit}</div><div class="manufacturing-scope"><p class="tag">Manufacturing scope</p><ol>${highlights}</ol></div><div class="project-gallery">${gallery}</div>${caseVideo}</article>`;
     }
 
     if (project.videoProject) {
-      return `<article class="project-card project-featured video-case-study reveal"><div class="video-project-copy"><p class="tag">${escapeHtml(project.eyebrow || project.tags.join(" · "))}</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p><ul>${points}</ul>${result}</div><div class="video-grid">${videos}</div><p class="video-behavior"><span aria-hidden="true">◼</span> Videos remain still until selected. Only one clip opens and plays at a time.</p></article>`;
+      return `<article class="project-card project-featured video-case-study reveal"><div class="video-project-copy"><p class="tag">${escapeHtml(project.eyebrow || project.tags.join(" · "))}</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p><ul>${points}</ul>${result}</div><div class="video-grid video-grid-${videoCount}">${videos}</div><p class="video-behavior"><span aria-hidden="true">◼</span> Videos remain still until selected. Only one clip opens and plays at a time.</p></article>`;
     }
 
     const detailBlock = points ? `<details class="project-details"><summary>Project details</summary><ul>${points}</ul>${result}</details>` : result;

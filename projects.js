@@ -27,7 +27,18 @@ window.portfolioProjects = [
       { image: "assets/projects/hals-cam-toolpaths.webp", alt: "Carbide Create contour toolpaths for a HALS structural plate", caption: "CAM simulation and contour toolpaths verified the cut before machining." },
       { image: "assets/projects/hals-manual-mill.webp", alt: "Manual mill cutting the aluminum servo linkage", caption: "Manual-mill setup for the linkage slot and mounting-hole pattern." },
       { image: "assets/projects/hals-servo-linkage.webp", alt: "Aluminum linkage connecting a servo to the printed valve assembly", caption: "Machined linkage integrated with the servo and printed valve hardware." },
-      { image: "assets/projects/hals-pvc-interface.webp", alt: "Machined PVC cap joining the structural plate to a PVC tube", caption: "Lathe-modified PVC interface installed in the final plate assembly." }
+      { image: "assets/projects/hals-pvc-interface.webp", alt: "Machined PVC cap joining the structural plate to a PVC tube", caption: "Lathe-modified PVC interface installed in the final plate assembly." },
+      { image: "assets/projects/hals-full-system-cad.webp", alt: "SolidWorks model of the full balloon-supported High Altitude Launch System", caption: "Full-system CAD established the balloon layout, arm geometry, and central launch-platform architecture.", fit: "contain" },
+      { image: "assets/projects/hals-platform-cad.webp", alt: "SolidWorks model of the High Altitude Launch System central platform and support arms", caption: "Detailed CAD view of the central platform, removable arms, release hardware, and launch vehicle.", fit: "contain" },
+      { image: "assets/projects/hals-completed-prototype.webp", alt: "Completed High Altitude Launch System prototype in the engineering laboratory", caption: "Completed prototype integrating the routed plates, PVC structure, printed mounts, and release assemblies.", fit: "contain" }
+    ],
+    videos: [
+      {
+        title: "CNC routing: structural plate",
+        caption: "Shapeoko 3 machining footage showing the plywood base profile being routed from the programmed toolpath.",
+        src: "assets/projects/videos/hals-base-cnc-router.mp4",
+        poster: "assets/projects/video-posters/hals-base-cnc-router.webp"
+      }
     ],
     featured: true,
     caseStudy: true
@@ -68,6 +79,29 @@ window.portfolioProjects = [
     ],
     videoProject: true,
     featured: true
+  },
+  {
+    title: "Stirling Engine Demonstration",
+    eyebrow: "Academic team project · Thermodynamics · Functional prototype",
+    tags: ["Thermodynamics", "Prototype assembly", "Testing", "Technical presentation"],
+    summary: "Built and demonstrated a compact Stirling engine that converted heat from an external flame into reciprocating motion and flywheel rotation.",
+    details: [
+      "Assembled a low-cost demonstration engine using aluminum cans, steel wool, wire, a balloon, and a CD flywheel.",
+      "Used cyclic heating, expansion, cooling, and compression of the working gas to produce mechanical motion.",
+      "Connected the piston motion to a rotating flywheel and demonstrated sustained operation under a small external heat source.",
+      "Presented the Stirling cycle, engine configurations, governing relationships, efficiency limits, and practical applications as a team."
+    ],
+    result: "Produced a functioning classroom prototype that visibly converted thermal energy into mechanical rotation.",
+    videos: [
+      {
+        title: "Working Stirling engine",
+        caption: "The completed engine operating under heat, with the flywheel sustaining the cycle.",
+        src: "assets/projects/videos/stirling-engine-demo.mp4",
+        poster: "assets/projects/video-posters/stirling-engine-demo.webp"
+      }
+    ],
+    videoProject: true,
+    featured: false
   },
   {
     title: "Ethereum Mining Thermal Optimization",

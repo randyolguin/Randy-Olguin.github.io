@@ -16,4 +16,4 @@ A static, responsive portfolio for GitHub Pages. No build tools or dependencies 
 - Follow `PROJECT-GUIDE.md` to add a project and images.
 - Adjust colors and layout in `styles.css`.
 
-The featured HALS senior-design case study uses photographs and screenshots from the team report while clearly identifying Randy's manufacturing scope. The Edge Finder project uses click-to-play machining videos that stay unloaded until selected. Program cards use original SVG illustrations; public program summaries link to official L3Harris and Leonardo DRS pages and remain separate from personal work details.
+The featured HALS senior-design case study combines manufacturing photographs, system CAD, the completed prototype, and click-to-play CNC footage while clearly identifying Randy's manufacturing scope. The Edge Finder and Stirling Engine projects use click-to-play videos that stay unloaded until selected. A complete on-page résumé includes downloadable PDF and Word copies. Program cards use original SVG illustrations; public program summaries link to official L3Harris and Leonardo DRS pages and remain separate from personal work details.
