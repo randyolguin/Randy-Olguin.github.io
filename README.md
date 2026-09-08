@@ -16,4 +16,4 @@ A static, responsive portfolio for GitHub Pages. No build tools or dependencies 
 - Follow `PROJECT-GUIDE.md` to add a project and images.
 - Adjust colors and layout in `styles.css`.
 
-The program cards use original SVG illustrations. Public program summaries link to the official L3Harris pages, and a disclosure note separates public mission context from personal work details.
+The featured HALS senior-design case study uses photographs and screenshots from the team report while clearly identifying Randy's manufacturing scope. Program cards use original SVG illustrations; public program summaries link to official L3Harris pages and remain separate from personal work details.

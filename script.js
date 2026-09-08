@@ -38,6 +38,9 @@ function renderProjects() {
       ? `<div class="project-art project-photo"><img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.imageAlt || project.title)}" loading="lazy" /></div>`
       : fallbackArt(project, index);
     const points = (project.details || []).map((point) => `<li>${escapeHtml(point)}</li>`).join("");
+    const metrics = (project.metrics || []).map((metric) => `<div><strong>${escapeHtml(metric.value)}</strong><span>${escapeHtml(metric.label)}</span></div>`).join("");
+    const highlights = (project.highlights || []).map((item, itemIndex) => `<li><span>${String(itemIndex + 1).padStart(2, "0")}</span><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.text)}</p></div></li>`).join("");
+    const gallery = (project.gallery || []).map((item) => `<figure><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt)}" loading="lazy" /><figcaption>${escapeHtml(item.caption)}</figcaption></figure>`).join("");
     const result = project.result ? `<p class="project-result"><strong>Result:</strong> ${escapeHtml(project.result)}</p>` : "";
     const credit = project.image && project.imageCredit
       ? `<small class="image-credit">Image: ${project.imageCreditUrl ? `<a href="${escapeHtml(project.imageCreditUrl)}" target="_blank" rel="noreferrer">${escapeHtml(project.imageCredit)}</a>` : escapeHtml(project.imageCredit)}</small>`
@@ -46,7 +49,12 @@ function renderProjects() {
       ? `<a class="project-link" href="${escapeHtml(project.link)}" target="_blank" rel="noreferrer">View project <span>↗</span></a>`
       : "";
 
-    return `<article class="project-card ${project.featured ? "project-featured" : ""} reveal">${image}<div class="project-copy"><p class="tag">${escapeHtml(project.tags.join(" · "))}</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p><details class="project-details"><summary>Project details</summary><ul>${points}</ul>${result}</details>${externalLink}${credit}</div></article>`;
+    if (project.caseStudy) {
+      return `<article class="project-card project-featured project-case-study reveal">${image}<div class="project-copy"><p class="tag">${escapeHtml(project.eyebrow || project.tags.join(" · "))}</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p><div class="case-metrics">${metrics}</div>${result}${credit}</div><div class="manufacturing-scope"><p class="tag">Manufacturing scope</p><ol>${highlights}</ol></div><div class="project-gallery">${gallery}</div></article>`;
+    }
+
+    const detailBlock = points ? `<details class="project-details"><summary>Project details</summary><ul>${points}</ul>${result}</details>` : result;
+    return `<article class="project-card ${project.featured ? "project-featured" : ""} reveal">${image}<div class="project-copy"><p class="tag">${escapeHtml(project.eyebrow || project.tags.join(" · "))}</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p>${detailBlock}${externalLink}${credit}</div></article>`;
   }).join("");
 }
 

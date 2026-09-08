@@ -37,6 +37,8 @@ Open `projects.js`. Copy one complete object inside `window.portfolioProjects`, 
 
 If you do not have an image yet, leave `image`, `imageAlt`, `imageCredit`, and `imageCreditUrl` as empty strings. Set `visual` to `clamp`, `thermal`, or `systems` to use a built-in technical illustration.
 
+For a larger featured case study like HALS, copy the entire HALS entry instead. Its optional `metrics`, `highlights`, and `gallery` fields create the manufacturing summary, numbered scope items, and image grid. Keep `caseStudy: true` on only your strongest project so the page stays focused.
+
 ## 3. Tell the engineering story
 
 The strongest portfolio projects answer five questions:
@@ -48,6 +50,8 @@ The strongest portfolio projects answer five questions:
 5. What changed as a measurable result?
 
 A useful project has 3–6 images: an overview, CAD or diagram, a build/test photo, an analysis result, and a final result. Caption each one so a recruiter can understand it in ten seconds.
+
+For team projects, clearly label your contribution. Describe shared system goals as team work, then use first-person language only for the parts you personally designed, machined, assembled, tested, or documented.
 
 ## 4. Publish the update
 
